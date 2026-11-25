@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormRules for Jira — Dynamic Field Rules &amp; Behaviours (Runs on Atlassian)</title>
+  <style>
+    :root { --bg: #ffffff; --surface: #f4f5f7; --text: #172b4d; --muted: #5e6c84; --accent: #0052cc; --border: #dfe1e6; --ok-bg: #e3fcef; --ok-text: #006644; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    header { border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; flex-wrap: wrap; gap: 12px; }
+    .brand { font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
+    main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 72px; }
+    .badge { display: inline-block; background: var(--ok-bg); color: var(--ok-text); font-weight: 600; font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px; }
+    h1 { font-size: 2.3rem; line-height: 1.2; margin: 0 0 14px; }
+    .lead { font-size: 1.12rem; max-width: 760px; color: var(--muted); margin: 0 0 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 28px 0 40px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+    h2 { margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    ol, ul { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    code { background: var(--surface); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    footer { border-top: 1px solid var(--border); padding: 24px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">FormRules for Jira</a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#quickstart">Documentation</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="eula.html">EULA</a>
+      <a href="sla.html">Support &amp; SLA</a>
+    </nav>
+  </header>
+
+  <main>
+    <span class="badge">100% Runs on Atlassian Forge &middot; Zero External Egress</span>
+    <h1>No-Code Dynamic Field Rules, Role Locks &amp; Behaviours for Jira Cloud</h1>
+    <p class="lead">
+      Show, hide, require, lock fields by Jira Group or Role, filter dropdown options, and auto-fill rich templates across Create, Issue View, and Workflow Transition screens — with zero scripts and zero external servers.
+    </p>
+
+    <section id="features">
+      <h2>Enterprise Capabilities</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Role &amp; Jira Group Field Locks</h3>
+          <p>Lock sensitive fields (Priority, Budget, Approvals) as Read-Only or Hidden based on the current user's Jira Group or Admin/Project Role.</p>
+        </div>
+        <div class="card">
+          <h3>Multi-Screen Enforcement in 1 Click</h3>
+          <p>Apply a single rule across Create Screen, Issue Detail View, and Workflow Transitions simultaneously so users cannot bypass required or locked fields after issue creation.</p>
+        </div>
+        <div class="card">
+          <h3>Built-In Live Rule Simulator</h3>
+          <p>Preview how all stacked rules interact for any user role, Jira group, and field combination directly inside the admin console before rolling out to your team.</p>
+        </div>
+        <div class="card">
+          <h3>Smart Live Jira Option Picker</h3>
+          <p>Click-pick live site groups, priorities, statuses, and custom dropdown options fetched directly from Jira <code>createmeta</code> — eliminating manual typos.</p>
+        </div>
+        <div class="card">
+          <h3>Conflict Detector &amp; Unlimited Context Merging</h3>
+          <p>Stack unlimited rules per screen with deterministic priority ordering and automatic pre-save warnings for contradictory actions.</p>
+        </div>
+        <div class="card">
+          <h3>Version History Rollback &amp; JSON Migration</h3>
+          <p>Every change saves an encrypted backup snapshot in Atlassian Forge Storage for safe 1-click rollback, plus portable JSON Export/Import between Sandbox and Production.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quickstart">
+      <h2>Quick Start Guide</h2>
+      <ol>
+        <li><strong>Open FormRules:</strong> Go to <em>Jira Settings &rarr; Apps &rarr; FormRules - Dynamic Field Rules</em> (Global Admins) or <em>Project Settings &rarr; FormRules - Field Rules</em> (Project Admins).</li>
+        <li><strong>Choose Context &amp; Screens:</strong> Select your Jira Project, Issue Type, and check one or more screens (<em>Create Screen</em>, <em>Issue View</em>, <em>Transition</em>, <em>JSM Agent</em>).</li>
+        <li><strong>Define IF Conditions:</strong> Branch on any Jira field, <em>Current User's Jira Group</em>, or <em>Current User's Role</em> using <code>ALL (AND)</code> or <code>ANY (OR)</code> logic, with live Quick-Pick value suggestions.</li>
+        <li><strong>Define THEN Actions:</strong> Combine Hide/Show, Require/Optional, Lock Read-Only, Rich ADF Description Templates, Dropdown Option Filtering, or Dynamic Label Renaming.</li>
+        <li><strong>Simulate &amp; Activate:</strong> Verify rule interactions in the <em>Rule Simulator</em> tab, or test immediately on your Jira screens.</li>
+      </ol>
+
+      <h2>Platform Compatibility Notes</h2>
+      <ul>
+        <li><strong>Dynamic Label Renaming:</strong> Jira Cloud renders dynamic field label changes on the Create Issue screen; Issue Detail View retains standard labels while enforcing visibility, required, read-only, and template rules.</li>
+        <li><strong>100% Runs on Atlassian:</strong> Zero outbound network calls. All rule configurations and version history remain strictly inside your Atlassian Cloud tenant.</li>
+      </ul>
+
+      <h2>Support Contact</h2>
+      <p>
+        Questions or feature requests? Email <a href="mailto:fatihemremertsoy1@gmail.com">fatihemremertsoy1@gmail.com</a>.
+        See our <a href="sla.html">Support &amp; SLA Policy</a> for guaranteed response targets.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 FormRules for Jira &middot;
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="eula.html">EULA</a>
+    <a href="sla.html">SLA</a>
+  </footer>
+</body>
+</html>
